@@ -1,0 +1,25 @@
+name: Deployment Gatsby Blog
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy_ghpages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Library
+        run: npm install
+
+      - name: Build Gatsby Application
+        run: npm run build
+
+      - name: Deploy to Github Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GH_PAT }}
+          publish_dir: ./public
