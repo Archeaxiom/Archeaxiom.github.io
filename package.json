@@ -40,7 +40,7 @@
     "url": "git+https://github.com/Archeaxiom/Archeaxiom.github.io.git"
   },
   "scripts": {
-    "create": "gatsby-post-gen",
+    "post": "gatsby-post-gen",
     "deploy": "gatsby build && gh-pages -d public -b gh-pages -r 'https://github.com/Archeaxiom/Archeaxiom.github.io.git'",
     "build": "gatsby build",
     "develop": "gatsby develop",
